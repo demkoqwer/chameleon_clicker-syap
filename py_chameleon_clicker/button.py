@@ -4,20 +4,25 @@ import random
 
 import pygame
 
-from py_chameleon_clicker.constants import HUD_HEIGHT, WINDOW_HEIGHT, WINDOW_WIDTH
+from py_chameleon_clicker.constants import (
+    BUTTON_MIN_RADIUS,
+    BUTTON_SHRINK_FACTOR,
+    BUTTON_SPEED_STEP,
+    BUTTON_START_RADIUS,
+    BUTTON_START_SPEED,
+    HUD_HEIGHT,
+    WINDOW_HEIGHT,
+    WINDOW_WIDTH,
+)
 
 
 class TargetButton:
     """Кнопка описывается структурой (x, y, radius, color) + скорость движения."""
 
-    def __init__(self, color, cfg):
-        # Параметры берутся из настроек (clicker_config.json)
-        self.radius = cfg["button_start_radius"]
-        self.min_radius = cfg["button_min_radius"]
-        self.shrink_factor = cfg["button_shrink_factor"]
-        self.speed_step = cfg["button_speed_step"]
+    def __init__(self, color):
+        self.radius = BUTTON_START_RADIUS
         self.color = color
-        self.speed = cfg["button_start_speed"]
+        self.speed = BUTTON_START_SPEED
         self.x = 0.0
         self.y = 0.0
         self.vx = 0.0
@@ -42,8 +47,8 @@ class TargetButton:
 
     def on_hit(self):
         """Реакция на попадание: уменьшение радиуса на 5%, ускорение, телепорт."""
-        self.radius = max(self.min_radius, int(self.radius * self.shrink_factor))
-        self.speed += self.speed_step
+        self.radius = max(BUTTON_MIN_RADIUS, int(self.radius * BUTTON_SHRINK_FACTOR))
+        self.speed += BUTTON_SPEED_STEP
         self.teleport()
 
     def update(self):
