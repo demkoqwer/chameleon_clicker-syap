@@ -1,12 +1,6 @@
 """Функции работы с цветом. Модуль не зависит от pygame, поэтому легко тестируется."""
 import random
 
-from py_chameleon_clicker.constants import (
-    COLOR_DIFF_MIN,
-    COLOR_DIFF_START,
-    COLOR_DIFF_STEP,
-)
-
 
 def random_color():
     """Возвращает случайный цвет (R, G, B)."""
@@ -18,12 +12,13 @@ def clamp(value, low=0, high=255):
     return max(low, min(high, value))
 
 
-def max_diff_for_level(level):
-    """Максимальная разница каналов для уровня.
+def max_diff_for_level(level, cfg):
+    """Максимальная разница каналов для уровня (параметры берутся из настроек).
 
     Чем выше уровень, тем меньше разница -> кнопка сильнее сливается с фоном.
     """
-    return max(COLOR_DIFF_MIN, COLOR_DIFF_START - (level - 1) * COLOR_DIFF_STEP)
+    return max(cfg["color_diff_min"],
+               cfg["color_diff_start"] - (level - 1) * cfg["color_diff_step"])
 
 
 def similar_color(base, max_diff):
@@ -40,8 +35,8 @@ def color_difference(c1, c2):
     return max(abs(a - b) for a, b in zip(c1, c2))
 
 
-def make_color_pair(level):
+def make_color_pair(level, cfg):
     """Создаёт пару (цвет фона, цвет кнопки) для заданного уровня."""
     background = random_color()
-    button = similar_color(background, max_diff_for_level(level))
+    button = similar_color(background, max_diff_for_level(level, cfg))
     return background, button
