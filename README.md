@@ -27,7 +27,6 @@ chameleon_clicker/
 ├── README.md                # Описание проекта
 ├── screenshots/             # Скриншоты для README
 └── py_chameleon_clicker/
-    ├── __init__.py          # Документация пакета
     ├── constants.py         # Все константы: окно, цвета, параметры механик, состояния
     ├── game.py              # Класс Game: игровой цикл, события, состояния
     ├── button.py            # Класс TargetButton: кнопка-мишень
