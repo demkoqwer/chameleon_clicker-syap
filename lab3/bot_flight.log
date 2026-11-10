@@ -1,0 +1,187 @@
+2026-11-10 12:52:51 | INFO | Бот запускается
+2026-11-10 12:52:51 | INFO | Start polling
+2026-11-10 12:53:06 | INFO | Run polling for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 20:35:08 | INFO | Бот запускается
+2026-11-10 20:35:08 | INFO | Start polling
+2026-11-10 20:35:19 | INFO | Run polling for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 20:36:10 | INFO | Бот запускается
+2026-11-10 20:36:10 | INFO | Start polling
+2026-11-10 20:36:10 | INFO | Run polling for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 20:36:10 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:10 | WARNING | Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 9042742622)
+2026-11-10 20:36:14 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:14 | WARNING | Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 9042742622)
+2026-11-10 20:36:15 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:15 | WARNING | Sleep for 1.465381 seconds and try again... (tryings = 1, bot id = 9042742622)
+2026-11-10 20:36:19 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:19 | WARNING | Sleep for 1.321799 seconds and try again... (tryings = 1, bot id = 9042742622)
+2026-11-10 20:36:21 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:21 | WARNING | Sleep for 2.007346 seconds and try again... (tryings = 2, bot id = 9042742622)
+2026-11-10 20:36:26 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:26 | WARNING | Sleep for 1.714870 seconds and try again... (tryings = 2, bot id = 9042742622)
+2026-11-10 20:36:28 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:28 | WARNING | Sleep for 2.539526 seconds and try again... (tryings = 3, bot id = 9042742622)
+2026-11-10 20:36:33 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:33 | WARNING | Sleep for 2.241368 seconds and try again... (tryings = 3, bot id = 9042742622)
+2026-11-10 20:36:35 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:35 | WARNING | Sleep for 3.161402 seconds and try again... (tryings = 4, bot id = 9042742622)
+2026-11-10 20:36:39 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:39 | WARNING | Sleep for 2.829809 seconds and try again... (tryings = 4, bot id = 9042742622)
+2026-11-10 20:36:45 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:45 | WARNING | Sleep for 4.121474 seconds and try again... (tryings = 5, bot id = 9042742622)
+2026-11-10 20:36:49 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:49 | WARNING | Sleep for 3.551234 seconds and try again... (tryings = 5, bot id = 9042742622)
+2026-11-10 20:36:52 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:52 | WARNING | Sleep for 4.986573 seconds and try again... (tryings = 6, bot id = 9042742622)
+2026-11-10 20:36:57 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:36:57 | WARNING | Sleep for 4.502156 seconds and try again... (tryings = 6, bot id = 9042742622)
+2026-11-10 20:37:02 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:02 | WARNING | Sleep for 5.070639 seconds and try again... (tryings = 7, bot id = 9042742622)
+2026-11-10 20:37:07 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:07 | WARNING | Sleep for 4.879505 seconds and try again... (tryings = 7, bot id = 9042742622)
+2026-11-10 20:37:12 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:12 | WARNING | Sleep for 4.927263 seconds and try again... (tryings = 8, bot id = 9042742622)
+2026-11-10 20:37:17 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:17 | WARNING | Sleep for 5.070770 seconds and try again... (tryings = 8, bot id = 9042742622)
+2026-11-10 20:37:23 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:23 | WARNING | Sleep for 4.988426 seconds and try again... (tryings = 9, bot id = 9042742622)
+2026-11-10 20:37:28 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:28 | WARNING | Sleep for 5.000186 seconds and try again... (tryings = 9, bot id = 9042742622)
+2026-11-10 20:37:33 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:33 | WARNING | Sleep for 4.981630 seconds and try again... (tryings = 10, bot id = 9042742622)
+2026-11-10 20:37:38 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:38 | WARNING | Sleep for 4.882563 seconds and try again... (tryings = 10, bot id = 9042742622)
+2026-11-10 20:37:43 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:43 | WARNING | Sleep for 5.011941 seconds and try again... (tryings = 11, bot id = 9042742622)
+2026-11-10 20:37:48 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:48 | WARNING | Sleep for 5.080463 seconds and try again... (tryings = 11, bot id = 9042742622)
+2026-11-10 20:37:53 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:53 | WARNING | Sleep for 4.885178 seconds and try again... (tryings = 12, bot id = 9042742622)
+2026-11-10 20:37:58 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:37:58 | WARNING | Sleep for 5.103892 seconds and try again... (tryings = 12, bot id = 9042742622)
+2026-11-10 20:38:03 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:03 | WARNING | Sleep for 4.936823 seconds and try again... (tryings = 13, bot id = 9042742622)
+2026-11-10 20:38:08 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:08 | WARNING | Sleep for 4.986445 seconds and try again... (tryings = 13, bot id = 9042742622)
+2026-11-10 20:38:13 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:13 | WARNING | Sleep for 5.128270 seconds and try again... (tryings = 14, bot id = 9042742622)
+2026-11-10 20:38:18 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:18 | WARNING | Sleep for 5.034725 seconds and try again... (tryings = 14, bot id = 9042742622)
+2026-11-10 20:38:23 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:23 | WARNING | Sleep for 5.060677 seconds and try again... (tryings = 15, bot id = 9042742622)
+2026-11-10 20:38:28 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:28 | WARNING | Sleep for 5.037846 seconds and try again... (tryings = 15, bot id = 9042742622)
+2026-11-10 20:38:34 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:34 | WARNING | Sleep for 5.055031 seconds and try again... (tryings = 16, bot id = 9042742622)
+2026-11-10 20:38:39 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:39 | WARNING | Sleep for 5.220961 seconds and try again... (tryings = 16, bot id = 9042742622)
+2026-11-10 20:38:44 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:44 | WARNING | Sleep for 4.727860 seconds and try again... (tryings = 17, bot id = 9042742622)
+2026-11-10 20:38:49 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:49 | WARNING | Sleep for 5.031019 seconds and try again... (tryings = 17, bot id = 9042742622)
+2026-11-10 20:38:54 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:54 | WARNING | Sleep for 5.109809 seconds and try again... (tryings = 18, bot id = 9042742622)
+2026-11-10 20:38:59 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:38:59 | WARNING | Sleep for 5.090525 seconds and try again... (tryings = 18, bot id = 9042742622)
+2026-11-10 20:39:04 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:04 | WARNING | Sleep for 4.935687 seconds and try again... (tryings = 19, bot id = 9042742622)
+2026-11-10 20:39:09 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:09 | WARNING | Sleep for 4.919376 seconds and try again... (tryings = 19, bot id = 9042742622)
+2026-11-10 20:39:14 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:14 | WARNING | Sleep for 4.937594 seconds and try again... (tryings = 20, bot id = 9042742622)
+2026-11-10 20:39:19 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:19 | WARNING | Sleep for 5.129645 seconds and try again... (tryings = 20, bot id = 9042742622)
+2026-11-10 20:39:24 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:24 | WARNING | Sleep for 5.047568 seconds and try again... (tryings = 21, bot id = 9042742622)
+2026-11-10 20:39:29 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:29 | WARNING | Sleep for 5.103217 seconds and try again... (tryings = 21, bot id = 9042742622)
+2026-11-10 20:39:35 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:35 | WARNING | Sleep for 4.990598 seconds and try again... (tryings = 22, bot id = 9042742622)
+2026-11-10 20:39:40 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:40 | WARNING | Sleep for 4.849374 seconds and try again... (tryings = 22, bot id = 9042742622)
+2026-11-10 20:39:45 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:45 | WARNING | Sleep for 5.144665 seconds and try again... (tryings = 23, bot id = 9042742622)
+2026-11-10 20:39:50 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:50 | WARNING | Sleep for 4.844682 seconds and try again... (tryings = 23, bot id = 9042742622)
+2026-11-10 20:39:55 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:39:55 | WARNING | Sleep for 4.854084 seconds and try again... (tryings = 24, bot id = 9042742622)
+2026-11-10 20:40:00 | ERROR | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-11-10 20:40:00 | WARNING | Sleep for 4.999486 seconds and try again... (tryings = 24, bot id = 9042742622)
+2026-11-10 20:40:01 | INFO | Polling stopped for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 20:40:01 | INFO | Polling stopped
+2026-11-10 20:40:01 | INFO | Бот остановлен
+2026-11-10 20:41:12 | INFO | Бот запускается
+2026-11-10 20:41:12 | INFO | Start polling
+2026-11-10 20:41:12 | INFO | Run polling for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 20:44:11 | INFO | Команда /start от 1744948342
+2026-11-10 20:44:12 | INFO | Update id=389658448 is handled. Duration 312 ms by bot id=9042742622
+2026-11-10 20:44:59 | INFO | Update id=389658449 is handled. Duration 218 ms by bot id=9042742622
+2026-11-10 20:45:23 | INFO | Пользователь 1744948342 задал имя игрока
+2026-11-10 20:45:23 | INFO | Update id=389658450 is handled. Duration 203 ms by bot id=9042742622
+2026-11-10 20:45:26 | INFO | Update id=389658451 is handled. Duration 186 ms by bot id=9042742622
+2026-11-10 20:45:34 | INFO | Пользователь 1744948342 задал имя игрока
+2026-11-10 20:45:34 | INFO | Update id=389658452 is handled. Duration 186 ms by bot id=9042742622
+2026-11-10 20:45:38 | INFO | Update id=389658453 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 20:45:50 | INFO | Update id=389658454 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 20:45:56 | INFO | Update id=389658455 is handled. Duration 608 ms by bot id=9042742622
+2026-11-10 20:45:57 | INFO | Update id=389658456 is handled. Duration 186 ms by bot id=9042742622
+2026-11-10 20:46:04 | INFO | Update id=389658457 is handled. Duration 264 ms by bot id=9042742622
+2026-11-10 20:53:40 | INFO | Update id=389658458 is handled. Duration 187 ms by bot id=9042742622
+2026-11-10 20:54:00 | INFO | Загрузка от 1744948342: добавлено 5, обновлено 0, отклонено 0
+2026-11-10 20:54:00 | INFO | Update id=389658459 is handled. Duration 328 ms by bot id=9042742622
+2026-11-10 20:54:19 | INFO | Update id=389658460 is handled. Duration 203 ms by bot id=9042742622
+2026-11-10 20:54:21 | INFO | Пользователь 1744948342 задал имя игрока
+2026-11-10 20:54:22 | INFO | Update id=389658461 is handled. Duration 203 ms by bot id=9042742622
+2026-11-10 20:54:28 | INFO | Update id=389658462 is handled. Duration 171 ms by bot id=9042742622
+2026-11-10 20:54:30 | INFO | Update id=389658463 is handled. Duration 264 ms by bot id=9042742622
+2026-11-10 20:54:39 | INFO | Update id=389658464 is handled. Duration 171 ms by bot id=9042742622
+2026-11-10 20:54:40 | INFO | Update id=389658465 is handled. Duration 155 ms by bot id=9042742622
+2026-11-10 20:54:42 | INFO | Update id=389658466 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 20:54:43 | INFO | Update id=389658467 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 20:54:44 | INFO | Update id=389658468 is handled. Duration 328 ms by bot id=9042742622
+2026-11-10 20:54:46 | INFO | Update id=389658469 is handled. Duration 233 ms by bot id=9042742622
+2026-11-10 20:54:49 | INFO | Update id=389658470 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 20:56:00 | INFO | Update id=389658471 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 21:03:08 | INFO | Update id=389658472 is handled. Duration 171 ms by bot id=9042742622
+2026-11-10 21:03:15 | INFO | Update id=389658473 is handled. Duration 203 ms by bot id=9042742622
+2026-11-10 21:03:19 | INFO | Update id=389658474 is handled. Duration 203 ms by bot id=9042742622
+2026-11-10 21:03:20 | INFO | Update id=389658475 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 21:03:23 | INFO | Update id=389658476 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 21:03:42 | INFO | Update id=389658477 is handled. Duration 171 ms by bot id=9042742622
+2026-11-10 21:07:32 | INFO | Бот запускается
+2026-11-10 21:07:32 | INFO | Start polling
+2026-11-10 21:07:32 | INFO | Run polling for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 21:07:32 | INFO | callback.answer не выполнен: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+2026-11-10 21:07:32 | INFO | Загрузка от 1744948342: добавлено 0, обновлено 0, отклонено 0
+2026-11-10 21:07:32 | INFO | Update id=389658479 is handled. Duration 312 ms by bot id=9042742622
+2026-11-10 21:07:32 | INFO | Update id=389658478 is handled. Duration 390 ms by bot id=9042742622
+2026-11-10 21:07:36 | INFO | Update id=389658480 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 21:07:41 | INFO | Загрузка от 1744948342: добавлено 0, обновлено 0, отклонено 0
+2026-11-10 21:07:41 | INFO | Update id=389658481 is handled. Duration 296 ms by bot id=9042742622
+2026-11-10 21:08:10 | INFO | Update id=389658482 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 21:08:14 | INFO | Загрузка от 1744948342: добавлено 0, обновлено 0, отклонено 0
+2026-11-10 21:08:15 | INFO | Update id=389658483 is handled. Duration 468 ms by bot id=9042742622
+2026-11-10 21:08:17 | INFO | Update id=389658484 is handled. Duration 203 ms by bot id=9042742622
+2026-11-10 21:08:22 | INFO | Update id=389658485 is handled. Duration 219 ms by bot id=9042742622
+2026-11-10 21:08:24 | INFO | Update id=389658486 is handled. Duration 219 ms by bot id=9042742622
+2026-11-10 21:08:28 | INFO | Загрузка от 1744948342: добавлено 0, обновлено 0, отклонено 0
+2026-11-10 21:08:28 | INFO | Update id=389658487 is handled. Duration 281 ms by bot id=9042742622
+2026-11-10 21:10:56 | INFO | Update id=389658488 is handled. Duration 171 ms by bot id=9042742622
+2026-11-10 21:11:01 | INFO | Загрузка от 1744948342: добавлено 3, обновлено 0, отклонено 0
+2026-11-10 21:11:01 | INFO | Update id=389658489 is handled. Duration 266 ms by bot id=9042742622
+2026-11-10 21:11:04 | INFO | Update id=389658490 is handled. Duration 219 ms by bot id=9042742622
+2026-11-10 21:11:10 | INFO | Update id=389658491 is handled. Duration 140 ms by bot id=9042742622
+2026-11-10 21:11:12 | INFO | Update id=389658492 is handled. Duration 171 ms by bot id=9042742622
+2026-11-10 21:11:17 | INFO | Update id=389658493 is handled. Duration 313 ms by bot id=9042742622
+2026-11-10 21:11:22 | INFO | Update id=389658494 is handled. Duration 219 ms by bot id=9042742622
+2026-11-10 21:12:01 | INFO | Update id=389658495 is handled. Duration 139 ms by bot id=9042742622
+2026-11-10 21:12:02 | INFO | Пользователь 1744948342: подписка True
+2026-11-10 21:12:02 | INFO | Update id=389658496 is handled. Duration 156 ms by bot id=9042742622
+2026-11-10 21:13:49 | INFO | Update id=389658497 is handled. Duration 172 ms by bot id=9042742622
+2026-11-10 21:13:54 | INFO | Загрузка от 1744948342: добавлено 1, обновлено 0, отклонено 4
+2026-11-10 21:13:54 | INFO | Update id=389658498 is handled. Duration 266 ms by bot id=9042742622
+2026-11-10 21:21:18 | INFO | Бот запускается
+2026-11-10 21:21:18 | INFO | Start polling
+2026-11-10 21:21:29 | INFO | Run polling for bot @demko_clicker_bot id=9042742622 - 'Кликер-Эволюционер'
+2026-11-10 21:21:29 | INFO | Update id=389658499 is handled. Duration 421 ms by bot id=9042742622
+2026-11-10 21:21:33 | INFO | Update id=389658500 is handled. Duration 171 ms by bot id=9042742622
