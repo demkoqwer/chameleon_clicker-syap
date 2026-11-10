@@ -29,7 +29,7 @@ lab3/
 ├── config.py            # Токен из .env, пути, границы проверки данных
 ├── test_analytics.py    # Тесты аналитики и сессий (без Telegram)
 ├── requirements.txt     # aiogram
-├── .env.example         # Образец файла с токеном
+├── .env
 ├── sessions/            # JSON-сессии пользователей (создаются при работе)
 ├── data/                # profiles_db.csv (общая база), play_days.json (дни игры)
 ├── screenshots/         # Скриншоты бота для README
@@ -197,7 +197,7 @@ FSM отвечает на вопрос «что бот сейчас ждёт», 
 
 ## Скриншоты
 
-Скриншоты бота в Telegram (папка `lab3/screenshots/`):
+Скриншоты бота в Telegram:
 
 ![Меню](screenshots/bot_menu.png)
 ![Топ игроков](screenshots/bot_top.png)
