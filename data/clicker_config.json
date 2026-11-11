@@ -1,0 +1,16 @@
+{
+  "start_lives": 3,
+  "hits_per_level": 5,
+  "max_level": 10,
+  "button_start_radius": 60,
+  "button_min_radius": 8,
+  "button_shrink_factor": 0.95,
+  "button_start_speed": 2.0,
+  "button_speed_step": 0.4,
+  "color_diff_start": 200,
+  "color_diff_min": 15,
+  "color_diff_step": 20,
+  "points_per_hit": 10,
+  "combo_step": 3,
+  "max_multiplier": 5
+}

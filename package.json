@@ -1,0 +1,10 @@
+{
+  "name": "chameleon_js",
+  "version": "1.0.0",
+  "description": "ЛР 4: математическое ядро игры «Эволюционный Кликер» на JavaScript (ES6+)",
+  "type": "module",
+  "scripts": {
+    "test": "node selftest.js",
+    "demo": "node demo.js"
+  }
+}
