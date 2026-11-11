@@ -53,13 +53,13 @@ lab3/
    ```
    pip install -r requirements.txt
    ```
-3. Скопируйте `.env.example` в `.env` и впишите токен:
+3.  `.env` и впишите токен:
    ```
    BOT_TOKEN=123456:ABC...
    ADMIN_IDS=ваш_telegram_id
    ```
    Файл `.env` добавлен в `.gitignore`. Токен нельзя публиковать в репозитории. Если он утёк, отзовите его у @BotFather.
-4. Запустите (из папки `lab3`):
+4. Запустите :
    ```
    python bot.py
    ```
