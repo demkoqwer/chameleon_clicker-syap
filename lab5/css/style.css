@@ -1,0 +1,31 @@
+/* Тёмная тема; цвета страницы (--page-bg) и рамки холста (--stage-bg) меняет js/widget.js после каждого попадания */
+:root { --page-bg: #0b0d14; --stage-bg: #141828; --panel: #151823; --line: #2a2e3d; --text: #e6e8ef; --muted: #8e96ad; --accent: #ffc83c; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--page-bg); color: var(--text); font-family: system-ui, "Segoe UI", sans-serif; }
+header { text-align: center; padding: 16px 12px 4px; }
+h1 { margin: 0; font-size: 26px; color: var(--accent); }
+header p { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+
+.layout { display: grid; grid-template-columns: minmax(0, 820px) 340px; gap: 16px; justify-content: center; padding: 16px; }
+.stage { background: var(--stage-bg); padding: 10px; border-radius: 10px; align-self: start; border: 1px solid var(--line); }
+canvas { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; cursor: crosshair; touch-action: none; background: #141828; }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 14px; }
+h2 { margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+h3 { margin: 8px 0 4px; font-size: 13px; color: var(--accent); }
+
+.hud { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; }
+.hud div { display: flex; justify-content: space-between; gap: 6px; font-size: 13px; border-bottom: 1px solid var(--line); padding: 2px 0; }
+.hud dt { color: var(--muted); }
+.hud dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+button { background: #232842; color: var(--text); border: 1px solid #3a4060; border-radius: 6px; padding: 6px 10px; font-size: 13px; cursor: pointer; }
+button:hover { background: #2e3558; border-color: var(--accent); }
+button:active { transform: translateY(1px); }
+.hint { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+code { background: #0b0d14; padding: 1px 5px; border-radius: 4px; color: var(--accent); }
+pre { margin: 0; background: #0b0d14; border-radius: 6px; padding: 8px; font-size: 11px; line-height: 1.5; color: #9fb0c8; overflow-x: auto; min-height: 7em; }
+
+@media (max-width: 1200px) { .layout { grid-template-columns: minmax(0, 820px); } }
+.hud div:last-child { grid-column: 1 / -1; } /* последняя строка («Сценарий») — на всю ширину */

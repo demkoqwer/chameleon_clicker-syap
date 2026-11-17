@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Эволюционный Кликер — виджет (ЛР 5)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Эволюционный Кликер</h1>
+    <p>Мышь — прицел и клик · WASD / стрелки — прицел, Shift — быстрее, Пробел — клик · F — заморозка · P — пауза · R — заново</p>
+  </header>
+  <main class="layout">
+    <section class="stage">
+      <canvas id="game" width="800" height="600"></canvas>
+    </section>
+    <aside class="panel">
+      <section>
+        <h2>Показатели</h2>
+        <dl class="hud">
+          <div><dt>Очки</dt><dd id="hud-score">—</dd></div>
+          <div><dt>Множитель</dt><dd id="hud-mult">—</dd></div>
+          <div><dt>Уровень</dt><dd id="hud-level">—</dd></div>
+          <div><dt>Жизни</dt><dd id="hud-lives">—</dd></div>
+          <div><dt>Скорость</dt><dd id="hud-speed">—</dd></div>
+          <div><dt>Радиус</dt><dd id="hud-radius">—</dd></div>
+          <div><dt>dE</dt><dd id="hud-de">—</dd></div>
+          <div><dt>K</dt><dd id="hud-k">—</dd></div>
+          <div><dt>Точность</dt><dd id="hud-acc">—</dd></div>
+          <div><dt>Состояние</dt><dd id="hud-state">—</dd></div>
+          <div><dt>Заморозка</dt><dd id="hud-freeze">—</dd></div>
+          <div><dt>Эффектов</dt><dd id="hud-fx">—</dd></div>
+          <div><dt>Время</dt><dd id="hud-scale">—</dd></div>
+          <div><dt>FPS браузера</dt><dd id="hud-fps">—</dd></div>
+          <div><dt>Шагов/с</dt><dd id="hud-steps">—</dd></div>
+          <div><dt>Сценарий</dt><dd id="hud-last">—</dd></div>
+        </dl>
+      </section>
+      <section>
+        <h2>Сценарии</h2>
+        <div class="group"><h3>Партия</h3><div class="buttons">
+          <button type="button" data-scenario="start">Старт</button>
+          <button type="button" data-scenario="restart">Новая партия</button>
+          <button type="button" data-scenario="pause">Пауза (P)</button>
+          <button type="button" data-scenario="freeze">Заморозка (F)</button>
+          <button type="button" data-scenario="addLife">+ жизнь</button>
+        </div></div>
+        <div class="group"><h3>Эффекты</h3><div class="buttons">
+          <button type="button" data-scenario="explode">Взрыв</button>
+          <button type="button" data-scenario="shockwave">Волна</button>
+        </div></div>
+        <div class="group"><h3>Мимикрия</h3><div class="buttons">
+          <button type="button" data-scenario="teleport">Телепорт</button>
+          <button type="button" data-scenario="recolor">Перекрасить</button>
+          <button type="button" data-scenario="maxCamouflage">Макс. маскировка</button>
+          <button type="button" data-scenario="setLevel" data-args='[5]'>Уровень 5</button>
+          <button type="button" data-scenario="setLevel" data-args='[10]'>Уровень 10</button>
+          <button type="button" data-scenario="reveal">Подсветить</button>
+        </div></div>
+        <div class="group"><h3>Симуляция</h3><div class="buttons">
+          <button type="button" data-scenario="timeScale" data-args='[0.3]'>Замедление ×0.3</button>
+          <button type="button" data-scenario="timeScale" data-args='[1]'>Норма ×1</button>
+          <button type="button" data-scenario="spotlight">Фонарик</button>
+          <button type="button" data-scenario="autoplay">Автобот</button>
+        </div></div>
+        <p class="hint">Из консоли: <code>Chameleon.scenarios.help()</code></p>
+      </section>
+      <section>
+        <h2>Журнал ядра</h2>
+        <pre id="hud-log">—</pre>
+      </section>
+    </aside>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "chameleon_widget",
+  "version": "1.0.0",
+  "description": "ЛР 5: веб-виджет «Эволюционный Кликер» на Canvas поверх ядра из ЛР 4",
+  "type": "module",
+  "scripts": {
+    "test": "node selftest.js",
+    "start": "node server.js"
+  }
+}
