@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Цветовые темы — панель администратора (ЛР 6)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Chameleon Clicker · Цветовые темы</h1>
+    <p>Панель администратора: темы оформления с цветами маскировки кнопки. Данные хранятся в LocalStorage.</p>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main>
+    <!-- ===== Create: форма добавления ===== -->
+    <section class="panel" aria-labelledby="create-title">
+      <h2 id="create-title">Новая тема</h2>
+      <form id="create-form" autocomplete="off">
+        <div class="field">
+          <label for="new-name">Название</label>
+          <input id="new-name" name="name" required minlength="2" maxlength="40" placeholder="Например, «Полночь»">
+          <span class="error" data-error="name"></span>
+        </div>
+        <div class="field">
+          <label for="new-background">Базовый цвет фона</label>
+          <div class="color-row">
+            <input type="color" name="backgroundPicker" value="#2a3b4c" aria-label="Выбор цвета фона">
+            <input id="new-background" name="background" value="#2a3b4c" maxlength="7" spellcheck="false" placeholder="#rrggbb">
+          </div>
+          <span class="error" data-error="background"></span>
+        </div>
+        <div class="field wide">
+          <label for="new-colors">Разрешённые цвета маскировки кнопки</label>
+          <div class="color-row">
+            <input type="color" name="colorPicker" value="#33475a" aria-label="Выбор цвета для добавления">
+            <button type="button" class="btn-addcolor">+ Добавить</button>
+            <button type="button" class="btn-suggest">Подобрать автоматически</button>
+          </div>
+          <input id="new-colors" name="allowedColors" spellcheck="false" placeholder="#33475a, #2f4152, ...">
+          <div class="live" data-live></div>
+          <span class="error" data-error="allowedColors"></span>
+        </div>
+        <div class="actions"><button type="submit" class="primary">Создать тему</button></div>
+      </form>
+    </section>
+
+    <!-- ===== Read: фильтры и список ===== -->
+    <section class="panel" aria-labelledby="list-title">
+      <div class="list-head">
+        <h2 id="list-title">Темы <span id="counter" class="muted"></span></h2>
+        <div class="view-switch" role="group" aria-label="Вид списка">
+          <button type="button" id="view-cards" class="active" aria-pressed="true">Карточки</button>
+          <button type="button" id="view-table" aria-pressed="false">Таблица</button>
+        </div>
+      </div>
+
+      <div class="filters">
+        <label>Поиск
+          <input type="search" id="search" placeholder="название или #цвет">
+        </label>
+        <label><span>Цветов маскировки ≥ <output id="filterVal">0</output></span>
+          <input type="range" id="filterColors" min="0" max="12" value="0">
+        </label>
+        <button type="button" id="btn-samples" class="ghost">Вернуть примеры</button>
+      </div>
+
+      <div id="cards" class="cards"></div>
+
+      <div id="table-wrap" class="table-wrap" hidden>
+        <table id="themes">
+          <thead>
+            <tr><th>Превью</th><th>Название</th><th>Фон</th><th>Цвета маскировки</th><th>ΔE мин</th><th>K макс</th><th>Действия</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <p id="empty" class="muted" hidden>Ничего не найдено. Измените фильтр или создайте тему.</p>
+    </section>
+
+    <section class="panel">
+      <details id="json-details">
+        <summary>JSON в LocalStorage (ключ <code>chameleon_themes</code>)</summary>
+        <pre id="json-view"></pre>
+      </details>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="js/crud.js"></script>
+</body>
+</html>

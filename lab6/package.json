@@ -1,0 +1,10 @@
+{
+  "name": "chameleon_crud",
+  "version": "1.0.0",
+  "description": "ЛР 6: CRUD-панель «Цветовые темы оформления» для игры Chameleon Clicker (LocalStorage)",
+  "type": "module",
+  "scripts": {
+    "test": "node selftest.js",
+    "start": "node server.js"
+  }
+}
