@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Chameleon Clicker — сайт-кликер (ЛР 7)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-game">
+  <div class="game-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Chameleon<span class="brand-sub">Clicker</span></a>
+      <span class="tagline">кликер-мимикрия · апгрейды · цветовые темы</span>
+      <nav class="top-nav" aria-label="Основная навигация">
+        <a href="index.html" aria-current="page">Игра</a>
+        <a href="pages/themes.html">Темы</a>
+      </nav>
+      <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация">
+        <a href="index.html" aria-current="page">Игра</a>
+        <a href="pages/themes.html">Темы</a>
+      </nav>
+    </header>
+
+    <!-- Левая панель: баланс и магазин улучшений -->
+    <aside class="side-panel upgrades" aria-labelledby="upgrades-title">
+      <div class="panel-head">
+        <h2 id="upgrades-title">Улучшения</h2>
+        <div class="wallet">Баланс <b id="shop-balance">0</b></div>
+      </div>
+      <div id="shop-list" class="shop-list"></div>
+      <div class="shop-foot"><button type="button" id="btn-reset-progress" class="ghost small">Сбросить прогресс</button></div>
+    </aside>
+
+    <!-- Динамический HUD: значения из движка обновляются каждый кадр -->
+    <section class="hud" aria-label="Показатели игры">
+      <div class="hud-top">
+        <div class="hud-state" id="hud-state" data-state="menu"><i class="pulse"></i><span id="hud-state-text">МЕНЮ</span></div>
+        <div class="hud-num"><span class="lbl">Баланс</span><b id="hud-balance">0</b></div>
+        <div class="hud-num"><span class="lbl">Очки</span><b id="hud-score">0</b><em id="hud-mult">×1</em></div>
+        <div class="hud-actions">
+          <button type="button" data-scenario="pause">Пауза</button>
+          <button type="button" data-scenario="restart">Заново</button>
+        </div>
+      </div>
+      <div class="meters">
+        <div class="meter"><div class="meter-head"><span>Уровень</span><b id="hud-level">1/10</b></div><div class="meter-track"><div class="meter-fill calm" id="hud-level-fill"></div></div></div>
+        <div class="meter"><div class="meter-head"><span>Жизни</span><b id="hud-lives">3/3</b></div><div class="meter-track"><div class="meter-fill calm" id="hud-lives-fill"></div></div></div>
+        <div class="meter"><div class="meter-head"><span>Маскировка</span><b id="hud-camo">0.000</b></div><div class="meter-track"><div class="meter-fill calm" id="hud-camo-fill"></div></div></div>
+        <div class="meter"><div class="meter-head"><span>Заморозка</span><b id="hud-freeze">—</b></div><div class="meter-track"><div class="meter-fill off" id="hud-freeze-fill"></div></div></div>
+      </div>
+    </section>
+
+    <!-- Игровое поле -->
+    <main class="stage" id="stage">
+      <canvas id="game" width="800" height="600" aria-label="Игровое поле"></canvas>
+    </main>
+
+    <!-- Правая панель: хотбар тем из LocalStorage -->
+    <aside class="side-panel hotbar" aria-labelledby="hotbar-title">
+      <div class="panel-head">
+        <h2 id="hotbar-title">Темы</h2>
+        <a class="link-small" href="pages/themes.html">управление</a>
+      </div>
+      <div id="hotbar-list" class="hotbar-list"></div>
+    </aside>
+
+    <footer class="site-footer">
+      <span class="hints">Мышь или касание — клик · WASD / стрелки — прицел · Shift — быстрее · Пробел — выстрел · F — заморозка · P — пауза · R — заново</span>
+      <span>ЛР 7 · Chameleon Clicker</span>
+    </footer>
+  </div>
+
+  <div id="banner" class="banner" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="js/widget-integration.js"></script>
+</body>
+</html>

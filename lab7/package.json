@@ -1,0 +1,10 @@
+{
+  "name": "chameleon_site",
+  "version": "1.0.0",
+  "description": "ЛР 7: сайт-кликер Chameleon Clicker (HTML, CSS Grid/Flexbox, JavaScript-модули)",
+  "type": "module",
+  "scripts": {
+    "test": "node selftest.js",
+    "start": "node server.js"
+  }
+}

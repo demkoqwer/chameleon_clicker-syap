@@ -1,0 +1,259 @@
+/* css/style.css — единый стиль сайта: переменные, шапка, навигация с «бургером», каркас игровой страницы на CSS Grid,
+   панели на Flexbox, HUD, медиазапросы. Страница тем (pages/themes.html) подключает этот файл и css/themes.css. */
+
+/* ===== Переменные оформления: меняются в одном месте для всех страниц ===== */
+:root {
+  --bg: #090d12;
+  --panel: #10161d;
+  --panel-2: #151d26;
+  --line: #1f2c38;
+  --text: #d9e6f2;
+  --muted: #7b8a99;
+  --accent: #39ff88;      /* неоновый зелёный: активное и «спокойное» */
+  --warn: #ffc83c;        /* жёлтый: среднее */
+  --danger: #ff4d5e;      /* красный: критическое */
+  --ok: #39ff88;
+  --ice: #7fd8ff;         /* голубой: заморозка */
+  --font: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Courier New", monospace;
+  --glow: 0 0 10px rgba(57, 255, 136, .12);
+  --stage-bg: #141828;    /* цвет рамки игрового поля: его меняет виджет после каждого попадания */
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.4; touch-action: manipulation; }
+h1, h2, h3, p { margin: 0; }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+
+/* ===== Шапка и навигация (Flexbox) ===== */
+.site-header { grid-area: header; position: relative; z-index: 30; display: flex; align-items: center; gap: 18px; padding: 10px 14px; background: var(--panel); border-bottom: 1px solid var(--line); box-shadow: var(--glow); }
+.brand { display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: bold; font-size: 18px; letter-spacing: .04em; white-space: nowrap; }
+.brand-mark { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.brand-sub { color: var(--accent); }
+.tagline { color: var(--muted); font-size: 12px; margin-right: auto; }
+.top-nav { display: flex; gap: 6px; }
+.top-nav a, .mobile-menu a { color: var(--muted); text-decoration: none; padding: 7px 14px; border: 1px solid transparent; border-radius: 6px; text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
+.top-nav a:hover, .mobile-menu a:hover { color: var(--text); border-color: var(--line); }
+.top-nav a[aria-current="page"], .mobile-menu a[aria-current="page"] { color: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+
+/* «Бургер»: на широких экранах скрыт, на узких заменяет верхнюю навигацию (см. медиазапрос ниже) */
+.burger { display: none; background: transparent; border: 1px solid var(--line); border-radius: 6px; width: 40px; height: 36px; font-size: 20px; cursor: pointer; margin-left: auto; }
+.burger:hover, .burger[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.mobile-menu { display: none; flex-direction: column; gap: 4px; position: absolute; top: 100%; left: 10px; right: 10px; padding: 8px; background: var(--panel-2); border: 1px solid var(--accent); border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 10px 24px rgba(0, 0, 0, .6); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 12px 14px; }
+
+/* ===== Общие элементы ===== */
+.site-footer { grid-area: footer; display: flex; justify-content: space-between; gap: 12px; padding: 8px 14px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--line); }
+code { color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.ghost { background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: var(--muted); }
+.ghost:hover { border-color: var(--danger); color: var(--danger); }
+.link-small { font-size: 12px; }
+.banner { position: fixed; top: 0; left: 0; right: 0; z-index: 60; padding: 8px 14px; text-align: center; background: #2a1519; color: var(--danger); border-bottom: 1px solid var(--danger); }
+.toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); z-index: 50; max-width: calc(100vw - 24px); background: #0f2218; color: var(--ok); border: 1px solid var(--ok); padding: 9px 18px; border-radius: 8px; text-align: center; }
+.toast.bad { background: #2a1519; color: var(--danger); border-color: var(--danger); }
+.dot { display: inline-block; width: 28px; height: 28px; border-radius: 50%; flex: none; }
+
+/* ======================================================================
+   Игровая страница: каркас на CSS Grid.
+   Области: шапка / [магазин | HUD + поле | хотбар] / подвал.
+   Холст занимает всё свободное место, вокруг него панели улучшений и тем.
+   ====================================================================== */
+.page-game { overflow: hidden; }
+.game-shell {
+  display: grid;
+  height: 100vh; height: 100dvh;                 /* dvh — высота видимой области на телефоне (без панели адреса) */
+  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) minmax(220px, 280px);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "header   header header"
+    "upgrades hud    hotbar"
+    "upgrades stage  hotbar"
+    "footer   footer footer";
+  gap: 0 12px;
+}
+.upgrades { grid-area: upgrades; }
+.hud { grid-area: hud; }
+.stage { grid-area: stage; }
+.hotbar { grid-area: hotbar; }
+
+/* Боковые панели: колонка на Flexbox, при нехватке высоты прокручиваются внутри себя, а не страница */
+.side-panel { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: auto; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); margin: 12px 0; }
+.upgrades { margin-left: 12px; }
+.hotbar { margin-right: 12px; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.side-panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.wallet { color: var(--muted); font-size: 12px; }
+.wallet b { color: var(--warn); font-size: 18px; margin-left: 4px; }
+
+/* ----- Магазин ----- */
+.shop-list { display: flex; flex-direction: column; gap: 10px; }
+.shop-card { display: flex; flex-direction: column; gap: 6px; padding: 10px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+.shop-card.affordable { border-color: #1f6b43; box-shadow: var(--glow); }
+.shop-name { font-size: 13px; color: var(--text); }
+.shop-desc { font-size: 11px; color: var(--muted); }
+.shop-meta { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; color: var(--warn); flex-wrap: wrap; }
+.shop-actions { display: flex; flex-direction: column; gap: 6px; }
+.shop-actions button { min-width: 0; padding: 8px 10px; background: #12261c; border: 1px solid #1f6b43; color: var(--ok); border-radius: 6px; cursor: pointer; white-space: nowrap; }
+.shop-actions button:hover:not(:disabled) { background: #173625; border-color: var(--accent); }
+.shop-actions .use { background: #10222c; border-color: #1f5b73; color: var(--ice); }
+.shop-actions .use:hover:not(:disabled) { border-color: var(--ice); background: #14303d; }
+.shop-actions button:disabled { opacity: .4; cursor: not-allowed; }
+.shop-foot { margin-top: auto; }
+
+/* ----- HUD ----- */
+.hud { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px; margin: 12px 0 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; border-bottom: none; }
+.hud-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.hud-num { display: flex; align-items: baseline; gap: 6px; }
+.hud-num .lbl { color: var(--muted); font-size: 11px; text-transform: uppercase; }
+.hud-num b { font-size: 20px; color: var(--warn); font-variant-numeric: tabular-nums; }
+.hud-num em { font-style: normal; color: var(--accent); font-weight: bold; }
+.hud-actions { display: flex; gap: 6px; margin-left: auto; }
+.hud-actions button { background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.hud-actions button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Индикатор состояния игры: подпись и цвет меняются в реальном времени (атрибут data-state ставит hud.js) */
+.hud-state { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; font-weight: bold; letter-spacing: .1em; font-size: 12px; min-width: 120px; justify-content: center; }
+.hud-state .pulse { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+.hud-state[data-state="play"]  { color: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+.hud-state[data-state="play"] .pulse { background: var(--accent); animation: pulse 1s ease-in-out infinite; }
+.hud-state[data-state="pause"] { color: var(--warn); border-color: var(--warn); }
+.hud-state[data-state="pause"] .pulse { background: var(--warn); }
+.hud-state[data-state="win"]   { color: #0b2014; background: var(--accent); border-color: var(--accent); }
+.hud-state[data-state="win"] .pulse { background: #0b2014; }
+.hud-state[data-state="lose"]  { color: var(--danger); border-color: var(--danger); animation: blink 1s steps(2) infinite; }
+.hud-state[data-state="lose"] .pulse { background: var(--danger); }
+@keyframes pulse { 50% { opacity: .25; transform: scale(.7); } }
+@keyframes blink { 50% { box-shadow: 0 0 12px var(--danger); } }
+
+/* Полосы-индикаторы: ширину задаёт style.width, цвет задаёт класс состояния */
+.meters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.meter-head { display: flex; justify-content: space-between; gap: 6px; font-size: 11px; color: var(--muted); white-space: nowrap; }
+.meter-head b { color: var(--text); overflow: hidden; text-overflow: ellipsis; }
+.meter-track { height: 8px; margin-top: 3px; background: #0a0f14; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.meter-fill { height: 100%; width: 0; border-radius: 3px; transition: width .12s linear, background-color .2s; }
+.meter-fill.calm { background: var(--accent); }
+.meter-fill.mid  { background: var(--warn); }
+.meter-fill.crit { background: var(--danger); box-shadow: 0 0 8px var(--danger); }
+.meter-fill.ice  { background: var(--ice); }
+.meter-fill.off  { background: #3a4654; }
+
+/* ----- Игровое поле ----- */
+.stage { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: var(--stage-bg); border: 1px solid var(--line); border-radius: 0 0 var(--radius) var(--radius); margin-bottom: 12px; }
+.stage canvas { position: absolute; inset: 0; margin: auto; display: block; cursor: crosshair; touch-action: none; /* касание по полю не прокручивает и не масштабирует страницу */
+  max-width: 100%; max-height: 100%; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+
+/* ----- Хотбар ----- */
+.hotbar-list { display: flex; flex-direction: column; gap: 8px; }
+.hotbar-card { display: flex; flex-direction: column; gap: 5px; text-align: left; padding: 8px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.hotbar-card:hover { border-color: #3a5a4a; }
+.hotbar-card.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--glow); }
+.hb-preview { display: flex; align-items: center; justify-content: center; gap: 6px; height: 44px; border-radius: 6px; border: 1px solid #ffffff1a; }
+.hb-preview .dot { width: 20px; height: 20px; }
+.hb-random { background: repeating-linear-gradient(135deg, #1b2530, #1b2530 8px, #151d26 8px, #151d26 16px); }
+.hb-random .dot { background: #2a3744; }
+.hb-name { color: var(--text); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hb-stats { color: var(--muted); font-size: 11px; }
+.hotbar-card.selected .hb-name { color: var(--accent); }
+
+/* ======================================================================
+   Планшет: три колонки сжимаются до двух, хотбар уходит вниз полосой
+   ====================================================================== */
+@media (max-width: 1100px) {
+  .game-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+    grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "header header"
+      "hud    upgrades"
+      "stage  upgrades"
+      "hotbar hotbar"
+      "footer footer";
+  }
+  .upgrades { margin: 12px 12px 12px 0; }
+  .hud { margin-left: 12px; }
+  .stage { margin-left: 12px; }
+  .hotbar { margin: 0 12px 12px; padding: 8px 12px; }
+  .hotbar-list { flex-direction: row; overflow-x: auto; padding-bottom: 4px; }
+  .hotbar-card { flex: 0 0 170px; }
+  .tagline { display: none; }
+}
+
+/* ======================================================================
+   Телефон (≤ 768px): одна колонка, бургер вместо верхней навигации,
+   компактные панели, страница не прокручивается, поле занимает всё свободное место
+   ====================================================================== */
+@media (max-width: 768px) {
+  body { overflow: hidden; }                       /* без вертикальной прокрутки */
+  .top-nav { display: none; }                      /* навигация ушла в бургер */
+  .burger { display: block; }
+  .tagline, .hints, .site-footer, .shop-desc, .shop-foot, .panel-head .wallet, .link-small { display: none; } /* второстепенное скрыто */
+  .site-header { padding: 6px 10px; gap: 10px; }
+  .brand { font-size: 16px; }
+
+  .game-shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "header"
+      "hud"
+      "stage"
+      "upgrades"
+      "hotbar";
+    gap: 0;
+  }
+  .hud { margin: 6px 6px 0; padding: 6px 8px; gap: 6px; }
+  .hud-top { gap: 6px; flex-wrap: wrap; }
+  .hud-num b { font-size: 16px; }
+  .hud-num { gap: 3px; }
+  .hud-num .lbl { font-size: 8px; }
+  .hud-state { min-width: 0; padding: 3px 8px; font-size: 11px; letter-spacing: .04em; }
+  .hud-actions { gap: 4px; }
+  .hud-actions button { padding: 5px 8px; font-size: 12px; }
+  .meters { gap: 6px; }
+  .meter-head { font-size: 9px; }
+  .meter-track { height: 6px; }
+  .stage { margin: 0 6px; }
+
+  /* Магазин: компактная панель — две карточки в ряд */
+  .upgrades { margin: 6px 6px 0; padding: 6px; border-radius: 8px; }
+  .panel-head { display: none; }
+  .shop-list { flex-direction: row; gap: 6px; }
+  .shop-card { flex: 1; min-width: 0; padding: 6px; gap: 4px; }
+  .shop-name { font-size: 11px; line-height: 1.2; }
+  .shop-meta { font-size: 10px; }
+  .shop-effect { display: none; }
+  .shop-actions { flex-direction: column; gap: 4px; }
+  .shop-actions button { padding: 6px 4px; font-size: 11px; }
+
+  /* Хотбар: горизонтальная полоса */
+  .hotbar { margin: 6px; padding: 6px; }
+  .hotbar .panel-head { display: none; }
+  .hotbar-card { flex: 0 0 118px; padding: 5px; gap: 3px; }
+  .hb-preview { height: 26px; gap: 4px; }
+  .hb-preview .dot { width: 12px; height: 12px; }
+  .hb-name { font-size: 11px; }
+  .hb-stats { display: none; }
+}
+
+/* Телефон в альбомной ориентации: поле слева, панели справа (по высоте всё равно мало места) */
+@media (max-height: 520px) and (orientation: landscape) {
+  .game-shell {
+    grid-template-columns: minmax(0, 1fr) 250px;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas:
+      "header header"
+      "stage  hud"
+      "stage  upgrades";
+  }
+  .hotbar { display: none; }
+  .hud { margin: 6px 6px 0 0; }
+  .stage { margin: 6px 6px 6px 6px; border-radius: var(--radius); }
+  .upgrades { margin: 6px 6px 6px 0; overflow: auto; }
+  .meters { grid-template-columns: 1fr 1fr; }
+}
